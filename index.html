@@ -17,14 +17,6 @@
 
 <body>
 
-
-    <!-- <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Fluid jumbotron</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-    </div> -->
-
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4">
@@ -33,46 +25,19 @@
             </h1>
             <h3> We only have 5 tables! Book your seat before they all are gone!</h3>
             <button id="reservation" type="button" class="btn btn-primary"> <span class="fa fa-list-alt" aria-hidden="true" ></span>  View Tables</button>
-            <button id="view-list" type="button" class="btn btn-success"> <span class="fa fa-list-ol" aria-hidden="true"></span>  Make Reservation</button>
-
-        
+            <button id="view-list" type="button" class="btn btn-danger"> <span class="fa fa-list-ol" aria-hidden="true"></span>  Make Reservation</button>
 
         </div>
     </div>
     <footer class="footer">
         <div class="container">
             <p>
-                <a href="/api/tables">API Table Link</a>
-                   | 
+                <a href="/api/tables">API Table Link</a> | 
                 <a href="/api/waitlist">API Table Link</a>
             </p>
         </div>
     </footer>
 
-    <script type="text/javascript">
-        $("#search-btn").on("click", function() {
-          var searchedCharacter = $("#character-search").val().trim();
-    
-          // Using a RegEx Pattern to remove spaces from searchedCharacter
-          // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-          searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-    
-          $.get("/api/characters/" + searchedCharacter, function(data) {
-            console.log(data);
-            if (data) {
-              $("#stats").show();
-              $("#name").text(data.name);
-              $("#role").text(data.role);
-              $("#age").text(data.age);
-              $("#force-points").text(data.forcePoints);
-            }
-            else {
-              $("#name").text("The force is not strong with this one. Your character was not found.");
-              $("#stats").hide();
-            }
-          });
-        });
-      </script>
 </body>
 
 
